@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface UserService {
     List<User> getUsers();
-    Optional<User> getUser(String userId);
+    Optional<User> getUser(long id);
 }
 
