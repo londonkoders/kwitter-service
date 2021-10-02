@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @RestController
 public class UserController {
-
     @Autowired
     UserService userService;
 
@@ -23,6 +22,5 @@ public class UserController {
     public Optional<User> getUser(@PathVariable Long id) {
         return userService.getUser(id);
     }
-
 }
 
