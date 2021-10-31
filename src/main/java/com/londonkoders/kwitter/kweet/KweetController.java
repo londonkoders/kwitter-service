@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @RestController
 public class KweetController {
-
     @Autowired
     KweetService kweetService;
 
@@ -23,6 +22,5 @@ public class KweetController {
     public Optional<Kweet> getKweet(@PathVariable Long id) {
         return kweetService.getKweet(id);
     }
-
 }
 

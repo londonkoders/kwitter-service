@@ -8,8 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface KweetRepository extends JpaRepository<Kweet, Long> {
-
-    Optional<Kweet> findById(long id);
     List<Kweet> findAll();
 
+    Optional<Kweet> findById(long id);
 }

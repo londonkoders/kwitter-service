@@ -8,13 +8,11 @@ import java.util.Optional;
 
 @Service
 public class KweetService {
-
     @Autowired
     KweetRepository kweetRepository;
 
     public List<Kweet> getKweets() {
-        List<Kweet> kweetList = kweetRepository.findAll();
-        return kweetList;
+        return kweetRepository.findAll();
     }
 
     public Optional<Kweet> getKweet(long id) {

@@ -1,6 +1,5 @@
 package com.londonkoders.kwitter.kweet;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.londonkoders.kwitter.user.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +11,6 @@ import java.sql.Date;
 @Getter
 @Setter
 public class Kweet {
-
     @Id
     @GeneratedValue
     private Long id;
