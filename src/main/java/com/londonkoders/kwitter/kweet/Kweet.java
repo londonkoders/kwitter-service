@@ -1,5 +1,6 @@
 package com.londonkoders.kwitter.kweet;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.londonkoders.kwitter.user.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,17 +14,20 @@ import java.sql.Date;
 public class Kweet {
     @Id
     @GeneratedValue
+    @JsonIgnore
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "userId", referencedColumnName = "id")
-    private User user;
+    private User author;
 
     private long likes;
 
     private String content;
 
-    private Date createdDate;
+    @Column(name = "createdDate")
+    private Date kweetedAt;
 
+    @JsonIgnore
     private Date updatedDate;
 }

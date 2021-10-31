@@ -14,15 +14,33 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue
+    @JsonIgnore
     private long id;
 
-    private String userId;
+    @Column(name = "name")
+    private String displayName;
 
+    @Column(name = "userId")
+    private String kwitterHandle;
+
+    @Transient
+    private String profileImageUrl;
+
+    @JsonIgnore
     private String password;
 
-    private String name;
-
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "author")
     @JsonIgnore
     private List<Kweet> kweet;
+
+    private void setProfileImageUrl() {
+        profileImageUrl = "https://ohfun.net/contents/article/images/2019/0701/1561972645906397.jpg";
+    }
+
+    public String getProfileImageUrl() {
+        if (profileImageUrl == null) {
+            setProfileImageUrl();
+        }
+        return profileImageUrl;
+    }
 }
