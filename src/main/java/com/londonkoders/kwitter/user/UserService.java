@@ -8,13 +8,11 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-
     @Autowired
     UserRepository userRepository;
 
     public List<User> getUsers() {
-        List<User> userList = userRepository.findAll();
-        return userList;
+        return userRepository.findAll();
     }
 
     public Optional<User> getUser(long id) {

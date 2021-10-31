@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 public class User {
-
     @Id
     @GeneratedValue
     private long id;
