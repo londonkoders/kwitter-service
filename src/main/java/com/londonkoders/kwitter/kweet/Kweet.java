@@ -12,6 +12,7 @@ import java.sql.Date;
 @Getter
 @Setter
 public class Kweet {
+
     @Id
     @GeneratedValue
     @JsonIgnore
