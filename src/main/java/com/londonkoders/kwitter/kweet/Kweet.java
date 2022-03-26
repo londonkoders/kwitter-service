@@ -1,9 +1,9 @@
 package com.londonkoders.kwitter.kweet;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.londonkoders.kwitter.user.User;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,10 +12,8 @@ import java.sql.Date;
 @Getter
 @Setter
 public class Kweet {
-
     @Id
-    @GeneratedValue
-    @JsonIgnore
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
@@ -27,8 +25,9 @@ public class Kweet {
     private String content;
 
     @Column(name = "createdDate")
+    @CreationTimestamp
     private Date kweetedAt;
 
-    @JsonIgnore
+    @CreationTimestamp
     private Date updatedDate;
 }

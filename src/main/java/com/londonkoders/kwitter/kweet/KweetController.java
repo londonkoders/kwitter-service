@@ -27,8 +27,8 @@ public class KweetController {
     }
 
     @PutMapping("/kweets/{id}")
-    public Kweet updateKweetContent(@RequestBody String content, @PathVariable Long id) {
-        return kweetService.updateKweetContent(content, id);
+    public Kweet updateKweetContent(@RequestBody Kweet kweet, @PathVariable Long id) {
+        return kweetService.updateKweetContent(kweet.getContent(), id);
     }
 
     @PutMapping("/kweets/{id}/like")
