@@ -13,8 +13,7 @@ import java.util.List;
 @Setter
 public class User {
     @Id
-    @GeneratedValue
-    @JsonIgnore
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "name")
