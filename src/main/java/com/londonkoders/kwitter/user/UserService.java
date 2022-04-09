@@ -18,4 +18,6 @@ public class UserService {
     public Optional<User> getUser(long id) {
         return userRepository.findById(id);
     }
+
+    public User createUser(User user) {return userRepository.saveAndFlush(user);}
 }
