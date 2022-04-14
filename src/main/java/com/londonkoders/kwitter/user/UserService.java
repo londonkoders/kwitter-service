@@ -19,5 +19,7 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public User createUser(User user) {return userRepository.saveAndFlush(user);}
+    public User createUser(User user) {
+        return userRepository.saveAndFlush(user);
+    }
 }
