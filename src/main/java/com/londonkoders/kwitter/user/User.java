@@ -17,8 +17,7 @@ public class User {
     @GeneratedValue
     @JsonIgnore
     private long id;
-
-    @JsonProperty("name")
+    
     @Column(name = "name")
     private String displayName;
 
